@@ -47,6 +47,22 @@ fun task6(events: List<Event>) {
     println("Last event of the day: ${events.last().title}")
 }
 
+// Task 7
+val Event.durationOfEvent: String
+    get() = if (this.durationInMinutes < 60) {
+        "short"
+    } else {
+        "long"
+    }
+
+fun task7(events: List<Event>) {
+    println("Duration of first event of the day: ${events[0].durationOfEvent}")
+}
+
 fun main() {
-    println("Hello world!")
+    val events = task3()
+    task4(events)
+    task5(events)
+    task6(events)
+    task7(events)
 }
