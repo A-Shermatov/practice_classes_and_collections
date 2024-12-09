@@ -29,19 +29,22 @@ fun task3(): List<Event> {
 }
 
 // Task 4
-fun task4() {
-    val events = task3()
+fun task4(events: List<Event>) {
     val shortEvents = events.filter { it.durationInMinutes < 60 }
     println("You have ${shortEvents.size} short events.")
 }
 
 // Task 5
-fun task5() {
-    val events = task3()
+fun task5(events: List<Event>) {
     val groupedEvents = events.groupBy { it.dayPart }
     groupedEvents.forEach { (dayPart, events) ->
         println("$dayPart: ${events.size} events")
     }
+}
+
+// Task 6
+fun task6(events: List<Event>) {
+    println("Last event of the day: ${events.last().title}")
 }
 
 fun main() {
